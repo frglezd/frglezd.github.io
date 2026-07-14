@@ -1,0 +1,35 @@
+<title>Domino</title>
+<style>
+  body {
+    margin: 0;
+    background: #1b1f24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    color: #eee;
+  }
+  h1 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.4rem;
+  }
+  p.note {
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+    color: #9aa4b1;
+  }
+  #display {
+    background: #fff;
+  }
+</style>
+
+<h1>Domino</h1>
+<p class="note">Loading the Java app in your browser via CheerpJ&hellip; this can take a few seconds on first load.</p>
+<div id="display"></div>
+
+<script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+<script type="module">
+  await cheerpjInit({ version: 17 });
+  cheerpjCreateDisplay(1000, 750, document.getElementById("display"));
+  await cheerpjRunJar("/app/domino/Domino.jar");
+</script>
