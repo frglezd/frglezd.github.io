@@ -1,8 +1,12 @@
 <title>Domino</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='90' text-anchor='middle'>🎲</text></svg>">
 <style>
-  body {
+  html, body {
+    height: 100%;
     margin: 0;
+    overflow: hidden;
+  }
+  body {
     background: #1b1f24;
     display: flex;
     flex-direction: column;
@@ -13,14 +17,19 @@
   h1 {
     margin: 1rem 0 0.5rem;
     font-size: 1.4rem;
+    flex: none;
   }
   p.note {
     margin: 0 0 1rem;
     font-size: 0.85rem;
     color: #9aa4b1;
+    flex: none;
   }
   #display {
     background: #fff;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
   }
 </style>
 
@@ -31,6 +40,6 @@
 <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
 <script type="module">
   await cheerpjInit({ version: 17 });
-  cheerpjCreateDisplay(1000, 750, document.getElementById("display"));
+  cheerpjCreateDisplay(-1, -1, document.getElementById("display"));
   await cheerpjRunJar("/app/domino/Domino.jar");
 </script>
